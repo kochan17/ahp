@@ -5,17 +5,17 @@
 
 <p>
   <strong>Age:</strong>
-  <%= @user.age %>
+  <%= @user.profile.age %>
 </p>
 
 <p>
   <strong>Gender:</strong>
-  <%= @user.gender %>
+  <%= @user.profile.gender %>
 </p>
 
 <!-- 他のフィールドをここに表示... -->
 
 <p>
   <strong>Recommended partner:</strong>
-  <%= @user.recommended_partner %>
+  <%= @user.profile.recommendation.text %>
 </p>

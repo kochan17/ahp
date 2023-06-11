@@ -62,3 +62,4 @@ group :development do
   gem "rails-erd"
 end
 gem 'devise'
+gem 'ruby-openai'
