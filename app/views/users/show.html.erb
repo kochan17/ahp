@@ -1,3 +1,5 @@
+<h1><%= @user.nickname %>'s Profile</h1>
+
 <p>
   <strong>Nickname:</strong>
   <%= @user.nickname %>
@@ -15,7 +17,7 @@
 
 <!-- 他のフィールドをここに表示... -->
 
-<p>
-  <strong>Recommended partner:</strong>
-  <%= @user.profile.recommendation.text %>
-</p>
+<h2>Recommended partner:</h2>
+<p><%= @user.profile.recommendation.text %></p>
+
+<%= link_to 'Edit Profile', edit_user_path(@user) %>
