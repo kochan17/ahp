@@ -9,12 +9,14 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+      @user.create_profile(profile_params) unless @user.profile
       get_personality_recommendation
       redirect_to @user, notice: 'Profile was successfully updated.'
     else
       render :edit
     end
   end
+  
 
   private
 
@@ -23,7 +25,11 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:nickname, :age, :gender)
+    params.require(:user).permit(:nickname)
+  end
+
+  def profile_params
+    params.require(:user).permit(:age, :gender, :interests)
   end
 
   def get_personality_recommendation
